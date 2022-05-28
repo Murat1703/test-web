@@ -1,0 +1,614 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html, body
+{
+	height: 100%;
+	font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
+}
+/*Оформление гиперссылок*/
+body.lock
+{
+	overflow: hidden;
+}
+a
+{
+	text-decoration: none;
+	color: white;
+}
+a:hover
+{
+	color:  #b82f48;
+	transition: .5s ease;
+}
+/*Оформление внутренннего контейнера*/
+.container	
+{
+	max-width: 1180px;
+	margin: 0 auto;
+}
+/*Оформление шапки*/
+.header
+{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+.header::before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #0369a9;
+	z-index: 2;
+}
+.header__logo
+{
+	position: relative;
+	z-index: 3;
+	margin-left: 10px;
+}
+.header__logo img
+{
+	margin-top: 3px;
+	width: 60px;
+	height: 70px;
+}
+.header__body
+{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 75px;
+}
+.header__list
+{
+	display: flex;
+	position: relative;
+	z-index: 2;
+	margin-right: 10px;
+}
+.header__list li
+{
+	list-style: none;
+	margin:  0 0 0 20px;
+}
+.header__link
+{
+	font-size: 20px;
+	font-weight: 500;
+}
+.header__burger
+{
+	display: none;
+}
+/*Оформление первого блока основного экрана*/
+.first
+{
+	margin-top: 75px;
+	height: 100%;
+	background-image: url(../img/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.first-inner
+{
+	padding: 0 10px;
+}
+.first-inner-title
+{
+	float: right;
+	margin-top: 25%;
+	font-size: 35px;
+	font-weight: 600;
+	color: #313131;
+}
+.first-inner-txt
+{
+	font-size: 20px;
+	color: #313131;
+	font-weight: 500;
+}
+/*Оформление кнопки*/
+.shine-button 
+{
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: 500;
+	display: inline-block;
+	padding: 10px 30px;
+	margin: 10px 0;
+	position: relative;
+	overflow: hidden;
+	border: 2px solid #0369a9;
+	border-radius: 8px;
+	font-family: 'Montserrat', sans-serif;
+	color: #0369a9;
+	transition: .2s ease-in-out;
+}
+.shine-button:before 
+{
+	content: "";
+	background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .5));
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	top: -8px;
+	left: -75px;
+	transform: skewX(-45deg);
+}
+.shine-button:hover 
+{
+	background: #0369a9;
+	color: #fff;
+}
+.shine-button:hover:before 
+{
+	left: 150px;
+	transition: .5s ease-in-out;
+}
+/*Оформление блока с услугами*/
+.second-inner
+{
+	padding: 0 10px;
+	margin-top: 20px;
+}
+.second-inner-title,
+.third-inner-title,
+.fourth-inner-title
+{
+	text-align: center;
+	font-size: 35px;
+	color: #313131;
+	font-weight: 600;
+}
+.second-inner-services,
+.third-inner-benefits
+{
+	margin-top: 20px;
+	justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+/*Карточки с услугами*/
+.services-card,
+.third-inner-card
+{
+	margin: 10px 10px;
+	padding: 0 10px;
+	width: 250px;
+	height: 250px;
+	border: .5px solid #626262;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: .3s ease;
+}
+.services-card:hover,
+.third-inner-card:hover
+{
+	background-color: rgba(3, 105, 169, 0.3);
+	box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);;
+	transition: .3s ease;
+}
+.services-card-inner,
+.third-card-inner
+{
+	text-align: center;
+	margin-top: 35px;
+}
+.card-inner-img img
+{
+	width: 40%;
+	height: 40%;
+}
+.card-inner-txt
+{
+	margin-top: 15px;
+	color: #313131;
+	font-size: 20px;
+	font-weight: 600;
+}
+/*Стилизация блока с преимуществами*/
+.third
+{
+	margin-top: 10px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	background-color: #dbdbdb;
+}
+/*Стилизация блока с картой*/
+.fourth-inner
+{
+	padding: 15px 10px;
+}
+
+.fourth-about-us
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.about-us-map
+{
+	margin-top: 20px;
+	border: 1px solid #313131;
+}
+.about-us-contacts
+{
+	margin-top: 20px;
+	margin-left: 30px;
+}
+.cont-title
+{
+	font-size: 20px;
+	font-weight: 600;
+	color: #313131;
+}
+.cont-txt
+{
+	margin-top: 20px;
+	font-weight: 600;
+	color: #313131;
+}
+.number	a,
+.mail a
+{
+	color: #313131;
+	transition: .5s ease;
+}
+.number	a:hover,
+.mail a:hover
+{
+	color: #b82f48;
+	transition: .5s ease;
+}
+.cont-txt img
+{
+	width: 5%;
+	height: 5%;
+}
+/*Стилизация футера*/
+.footer
+{
+	height: 220px;
+	background-color: #0369a9;
+	color: #fff;
+}
+
+.content img
+{
+	cursor: pointer;
+	margin-top: 15px;
+	width: 150px;
+	height: 175px;
+}
+.content
+{	
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10px;
+}
+.txt
+{
+	margin-top: 20px;
+}
+.call,
+.mailto
+{
+	padding: 5px 0;
+	font-weight: 600;
+	font-size: 20px;
+}
+/*Ссылки на социальные сети*/
+.social-networks
+{
+	margin-top: 10px;
+	display: flex;
+}
+.social-networks img
+{
+	margin: 0 3px;
+	width: 35px;
+	height: 35px;
+	transition: .3s ease;
+}
+.social-networks img:hover
+{
+	transform: scale(1.3);
+	transition: .3s ease;
+}
+/*Копирайт*/
+.cpr
+{
+	text-align: center;
+	font-weight: 600;
+	font-size: 20px;
+}
+/*Кнопка наверх*/
+.scrollup
+{
+	width:40px;
+	height:40px;
+	opacity:0.3;
+	position:fixed;
+	bottom:50px;
+	right:10px;
+	display:none;
+	text-indent:-9999px;
+	background: url('../img/icon_top.png') no-repeat;
+}
+
+.modal {
+  position: absolute;
+	visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  top: -1000px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: scroll;
+  padding: 60px 15px;
+}
+.modal__header
+{
+border-radius: 15px;
+}
+
+.modal__h
+{
+  border-radius: 15px 15px 0 0;
+  height: 50px;
+  background-color: #0369a9;
+}
+ 
+.modal_active {
+  position: fixed;
+  top: 0;
+  visibility: visible;
+  opacity: 1;
+  transition: .3s;
+}
+.modal__content {
+  width: 100%;
+  max-width: 300px;
+  background: #f9f9f9;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 5px 15px black;
+}
+ form
+ {
+  margin-left: 20px;
+ }
+.modal__close-button {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  position: absolute;
+  margin-top: 10px;
+  right: 10px;
+  top: 0;
+  background: none;
+  cursor: pointer;
+  transition: .3s;
+  outline: none;
+}
+ 
+.modal__close-button:hover {
+  transition: .3s;
+  transform: rotate(180deg);
+}
+ 
+.modal__title 
+{
+  font-size: 30px;  
+  color: #313131;
+  text-align: center;
+  margin: 10px 0;
+}
+ 
+.modal__description {
+  font-size: 10px;
+}
+
+.contact_inp_user
+{
+    height: 50px;
+  border: 1px solid #1f1f1f; 
+    border-radius: 5px;
+    width: 100%;
+    background: url("../img/user.svg") center left 10px no-repeat;
+    background-size: 30px;
+    padding: 0 15px 0 45px;
+    transition: 0.3s;  
+    margin-top: 5px;
+}
+.contact_inp_user:focus,
+.contact_inp_phone:focus
+{
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(3, 105, 169, 0.9); 
+  }
+.contact_inp_phone
+{
+    height: 50px;
+    border: 1px solid #1f1f1f;
+    border-radius: 5px;
+    width: 100%;
+    background: url("../img/tel.svg") center left 10px no-repeat;
+    background-size: 30px;
+    padding: 0 15px 0 45px;
+    transition: 0.3s;  
+    margin-top: 5px;
+}
+input.contact_inp_phone::-webkit-outer-spin-button,
+input.contact_inp_phone::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+#name,
+#numb,
+#done
+{
+  width: 250px;
+}
+#done
+{
+	background-color: #0369a9;
+	color: #fff;
+	cursor: pointer;
+}
+
+.data-txt
+{
+  color: #313131;
+  margin-top: 10px;
+  padding: 0 1px;
+  font-size: 9px;
+}
+
+
+@media (max-width: 767px)
+{
+	.header__burger
+	{
+		display: block;
+		position: absolute;
+		width: 30px;
+		height: 20px;
+		right: 10px;
+		z-index: 3;
+		cursor: pointer;
+	}
+	.header__burger::before,
+	.header__burger::after
+	{
+		content: '';
+		position: absolute;
+		background-color: #fff;
+		height: 2px;
+		width: 100%;
+		left: 0;
+		transition: .3s ease all;
+	}
+	.header__burger::before
+	{
+		top: 0;
+		transition: .3s ease all;
+	}
+	.header__burger::after
+	{
+		bottom: 0;
+		transition: .3s ease all;
+	}
+
+	.header__burger span
+	{
+		position: absolute;
+		background-color: #fff;
+		height: 2px;
+		width: 100%;
+		top: 9px;
+		transition: .3s ease all;
+	}
+	.header__menu
+	{
+		position: fixed;
+		top: -100%;
+		transition: .3s ease all;
+		padding-top: 80px;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(3, 105, 169, 0.95);
+	}
+	.header__list
+	{
+		display: block;
+		text-align: center;
+	}
+	.header__list li
+	{
+		margin-top: 15px;
+	}
+	.header__list li a
+	{
+		color: #fff;
+	}
+	.header__list li a:hover
+	{
+		color:  #b82f48;
+		transition: .5s ease;
+	}
+	.header__burger.active::before
+	{
+		transform: rotate(45deg);
+		top: 9px;
+		transition: .3s ease all;
+	}
+	.header__burger.active::after
+	{
+		transform: rotate(-45deg);
+		bottom: 9px;
+		transition: .3s ease all;
+	}
+
+	.header__burger.active span
+	{
+		display: none;
+	}
+	.header__menu.active
+	{
+		top: 0;
+		transition: .3s ease all;
+	}
+	.first-inner-title
+	{
+		margin-top: 20%;
+		margin-left: 0 auto;
+		padding: 10px 5px;
+		background-color:rgba(3, 105, 169, .65);
+		color: #fff;
+	}
+	.shine-button
+	{
+		border: 2px solid #fff;
+		color:	#fff;
+	}
+	.first-inner-txt
+	{
+		color: #fff;
+	}
+}
+
+@media (max-width: 400px)
+{
+	.call,
+	.mailto,
+	.cpr
+	{
+		font-size: 15px;
+		font-weight: 500;
+	}
+}
+
